@@ -1,0 +1,31 @@
+{
+    "name": "siam401/api-utils",
+    "description": "A Laravel package for file uploads.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Arman Hasan Siam",
+            "email": "armansiam22@gmail.com"
+        }
+    ],
+
+    "autoload": {
+        "psr-4": {
+            "Siam401\\ApiUtils\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Siam401\\ApiUtils\\ApiUtilsServiceProvider"
+            ],
+            "aliases": {
+                "ApiUtil": "Siam401\\ApiUtils\\ApiUtil"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {}
+}
