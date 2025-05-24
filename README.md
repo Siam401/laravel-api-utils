@@ -27,3 +27,7 @@ return FileUpload::storagePath('file-path');
 return FileUpload::exists('file-path');
 return FileUpload::getUploadTime('file-path');
 ```
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
