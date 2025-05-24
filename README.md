@@ -1,33 +1,61 @@
-# File-Upload
+# API Utils for Laravel
 
-A simple package to help you easily structure api for your laravel project.
+A simple Laravel helper to standardize API JSON responses.
 
----
-
-## Installation
-
-You can install the package via Composer:
+## 📦 Installation
 
 ```bash
-composer require siam401/apiutil
+composer require siam401/api-utils
 ```
 
-#Code example
+## 🚀 Usage
 
+Import the class:
 
 ```php
-use Siam401\ApiUtil\ApiUtil;
-
-return FileUpload::upload('file'); // single or multiple file upload
-return FileUpload::getUrl('file-path');
-return FileUpload::render('file-path');
-return FileUpload::remove('file-path');
-return FileUpload::removeDirectory('file-path');
-return FileUpload::storagePath('file-path');
-return FileUpload::exists('file-path');
-return FileUpload::getUploadTime('file-path');
+use Siam401\ApiUtils\ApiUtil;
 ```
 
-## License
+### ✅ Success Response
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+```php
+return ApiUtil::success('Fetched successfully', $data);
+```
+
+### ❌ Failure Response
+
+```php
+return ApiUtil::failure('Something went wrong', 400, ['field' => 'error']);
+```
+
+### 💥 Crash Response
+
+```php
+return ApiUtil::crash('Unexpected system error', 500, ['exception' => $e->getMessage()]);
+```
+
+### 🔍 Not Found Response
+
+```php
+return ApiUtil::notFound('Record not found');
+```
+
+## 📁 Response Format
+
+All responses follow a consistent structure:
+
+```json
+{
+  "message": "Description",
+  "contents": {...}
+}
+```
+
+## 🛠️ Requirements
+
+- PHP ^8.0
+- Laravel 9 or 10
+
+## 📄 License
+
+This package is open-source software licensed under the [MIT license](LICENSE).
